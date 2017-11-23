@@ -7,3 +7,26 @@
 //
 
 import Cocoa
+
+class EventMonitor {
+    private var monitor: AnyObject?
+    private var mask: NSEvent.EventTypeMask
+    private var handler: (NSEvent?) -> ()
+    
+    init(mask: NSEvent.EventTypeMask, handler: @escaping (NSEvent?) -> ()){
+        self.mask = mask
+        self.handler = handler
+    }
+    
+    deinit {
+        stop()
+    }
+    
+    func start(){
+        
+    }
+    
+    func stop(){
+        
+    }
+}
