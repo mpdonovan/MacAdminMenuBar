@@ -20,8 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named: NSImage.Name(rawValue: "kisdmb2X"))
             //button.action = #selector(showdesktop)
         }
-        menu.addItem(NSMenuItem(title: "Show", action: #selector(showdesktop), keyEquivalent: "S"))
-        menu.addItem(NSMenuItem(title: "Hide", action: #selector(hidedesktop), keyEquivalent: "H"))
+        menu.addItem(NSMenuItem(title: "Show Icons", action: #selector(showdesktop), keyEquivalent: "S"))
+        menu.addItem(NSMenuItem(title: "Hide Icons", action: #selector(hidedesktop), keyEquivalent: "H"))
         menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
         
         statusItem.menu = menu
