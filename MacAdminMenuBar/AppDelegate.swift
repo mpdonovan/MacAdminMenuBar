@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         if let button = statusItem.button {
-            button.image = NSImage(named: NSImage.Name(rawValue: "kisdmb2X"))
+            button.image = NSImage(named: NSImage.Name(rawValue: "KISDColorseal_32x32"))
             //button.action = #selector(showdesktop)
         }
         menu.addItem(NSMenuItem(title: "Show Icons", action: #selector(showdesktop), keyEquivalent: "S"))
