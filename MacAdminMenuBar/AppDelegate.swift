@@ -11,13 +11,25 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    @IBOutlet weak var showDesktopMI: NSMenuItem!
+    
+    @IBOutlet weak var hideDesktopMI: NSMenuItem!
+    
+    @IBAction func showDesktopMI(_ sender: Any){
+        showdesktop(sender: Any?.self)
+    }
+    
+    @IBAction func hideDesktopMI(_ sender: Any){
+        hidedesktop(sender: (Any).self)
+    }
+    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let menu = NSMenu()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         if let button = statusItem.button {
-            button.image = NSImage(named: NSImage.Name(rawValue: "kisdmb2X"))
+            button.image = NSImage(named: NSImage.Name(rawValue: "KISDColorseal_32x32"))
             //button.action = #selector(showdesktop)
         }
         menu.addItem(NSMenuItem(title: "Show Icons", action: #selector(showdesktop), keyEquivalent: "S"))
@@ -26,13 +38,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
         
         statusItem.menu = menu
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
-    @objc func showdesktop(sender: NSStatusBarButton) {
+    @objc func showdesktop(sender: Any?) {
         //print("Show Desktop")
         // Show Desktop icons
         let writeProcess = Process()
@@ -51,7 +64,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
 
-    @objc func hidedesktop(sender: NSStatusBarButton) {
+    @objc func hidedesktop(sender: Any?) {
         //print("Hide Desktop")
         // Hide Desktop Icons
         let writeProcess = Process()
