@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BABF0551FC6A29E00B9E16F /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BABF0541FC6A29E00B9E16F /* EventMonitor.swift */; };
 		1BE354931FC63613003071E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE354921FC63613003071E4 /* AppDelegate.swift */; };
 		1BE354951FC63613003071E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE354941FC63613003071E4 /* ViewController.swift */; };
 		1BE354971FC63613003071E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BE354961FC63613003071E4 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BABF0541FC6A29E00B9E16F /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		1BE3548F1FC63613003071E4 /* MacAdminMenuBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacAdminMenuBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE354921FC63613003071E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BE354941FC63613003071E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				1BE354921FC63613003071E4 /* AppDelegate.swift */,
+				1BABF0541FC6A29E00B9E16F /* EventMonitor.swift */,
 				1BE354941FC63613003071E4 /* ViewController.swift */,
 				1BE354961FC63613003071E4 /* Assets.xcassets */,
 				1BE354981FC63613003071E4 /* Main.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BABF0551FC6A29E00B9E16F /* EventMonitor.swift in Sources */,
 				1BE354951FC63613003071E4 /* ViewController.swift in Sources */,
 				1BE354931FC63613003071E4 /* AppDelegate.swift in Sources */,
 			);
