@@ -32,8 +32,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func showdesktop(sender: NSStatusBarButton) {
-        print("Show Desktop")
-        
+        //print("Show Desktop")
+        // Show Desktop icons
         let writeProcess = Process()
         writeProcess.launchPath = "/usr/bin/env"
         writeProcess.arguments = ["defaults", "write", "com.apple.finder", "CreateDesktop", "true"]
@@ -51,8 +51,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func hidedesktop(sender: NSStatusBarButton) {
-        print("Hide Desktop")
-        
+        //print("Hide Desktop")
+        // Hide Desktop Icons
         let writeProcess = Process()
         writeProcess.launchPath = "/usr/bin/env"
         writeProcess.arguments = ["defaults", "write", "com.apple.finder", "CreateDesktop", "false"]
