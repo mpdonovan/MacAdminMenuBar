@@ -21,12 +21,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named: NSImage.Name(rawValue: "KISDColorseal_32x32"))
             //button.action = #selector(showdesktop)
         }
+
         menu.addItem(NSMenuItem(title: "Show Icons", action: #selector(showdesktop), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Hide Icons", action: #selector(hidedesktop), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Text Display", action: #selector(getBHT), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: ""))
+
         
         statusItem.menu = menu
         
