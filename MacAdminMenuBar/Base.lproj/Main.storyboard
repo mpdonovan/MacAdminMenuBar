@@ -100,7 +100,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MacAdminMenuBar" customModuleProvider="target">
                     <connections>
                         <outlet property="hideDesktopMI" destination="R4o-n2-Eq4" id="cep-ia-Rjf"/>
-                        <outlet property="showdesktopMI" destination="OY7-WF-poV" id="KIs-YC-NhJ"/>
+                        <outlet property="showDesktopMI" destination="OY7-WF-poV" id="qMi-hC-2eV"/>
                     </connections>
                 </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>

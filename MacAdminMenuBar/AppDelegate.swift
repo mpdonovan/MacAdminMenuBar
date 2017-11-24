@@ -35,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "Show Icons", action: #selector(showdesktop), keyEquivalent: "S"))
         menu.addItem(NSMenuItem(title: "Hide Icons", action: #selector(hidedesktop), keyEquivalent: "H"))
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "Q"))
         
         statusItem.menu = menu
         
@@ -43,6 +43,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+        
+    }
+    
+    @objc func quit(_ sender: Any?) {
+        NSApplication.shared.terminate(sender)
     }
 
     @objc func showdesktop(sender: Any?) {
