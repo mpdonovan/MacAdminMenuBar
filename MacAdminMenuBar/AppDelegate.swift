@@ -7,21 +7,10 @@
 //
 
 import Cocoa
+import Foundation
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    @IBOutlet weak var showDesktopMI: NSMenuItem!
-    
-    @IBOutlet weak var hideDesktopMI: NSMenuItem!
-    
-    @IBAction func showDesktopMI(_ sender: Any){
-        showdesktop(sender: Any?.self)
-    }
-    
-    @IBAction func hideDesktopMI(_ sender: Any){
-        hidedesktop(sender: (Any).self)
-    }
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let menu = NSMenu()
@@ -34,6 +23,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         menu.addItem(NSMenuItem(title: "Show Icons", action: #selector(showdesktop), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Hide Icons", action: #selector(hidedesktop), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Text Display", action: #selector(getBHT), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: ""))
         
@@ -87,6 +78,44 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         dockProcess.waitUntilExit()
 
         
+    }
+    
+    @objc func getBHT(sender: Any?) {
+        
+        let bundle = Bundle.main
+        let bhtPath = bundle.path(forResource: "BigHonkingText", ofType: "")
+        
+        let myString = getString(title: "BigHonkingText", question: "Enter text to be displayed", defaultValue: "BigHonkingText")
+        
+        let myText = " " + myString + " "
+        
+        let writeProcess = Process()
+        writeProcess.launchPath = bhtPath
+        writeProcess.arguments = ["-p", "0",myText]
+        
+        writeProcess.launch()
+        writeProcess.waitUntilExit()
+        
+    }
+    
+    @objc func getString(title: String, question: String, defaultValue: String) -> String {
+        let msg = NSAlert()
+        msg.addButton(withTitle: "OK")      // 1st button
+        msg.addButton(withTitle: "Cancel")  // 2nd button
+        msg.messageText = title
+        msg.informativeText = question
+    
+        let txt = NSTextField(frame: NSRect(x: 0, y: 0, width: 250, height: 24))
+        txt.stringValue = defaultValue
+    
+        msg.accessoryView = txt
+        let response: NSApplication.ModalResponse = msg.runModal()
+    
+        if (response == NSApplication.ModalResponse.alertFirstButtonReturn) {
+            return txt.stringValue
+        } else {
+            return ""
+        }
     }
 }
 

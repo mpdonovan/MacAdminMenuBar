@@ -58,26 +58,6 @@
                             </menuItem>
                             <menuItem title="Icons" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Icons" systemMenu="window" id="Td7-aD-5lo">
-                                    <items>
-                                        <menuItem title="Show Icons" keyEquivalent="S" allowsKeyEquivalentWhenHidden="YES" id="OY7-WF-poV">
-                                            <connections>
-                                                <action selector="showDesktopMI:" target="Voe-Tx-rLC" id="wrh-Sn-da9"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Hide Icons" keyEquivalent="H" id="R4o-n2-Eq4">
-                                            <connections>
-                                                <action selector="hideDesktopMI:" target="Voe-Tx-rLC" id="kmo-Ii-loE"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
-                                        <menuItem title="Quit" keyEquivalent="q" id="LE2-aR-0XJ">
-                                            <connections>
-                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
                             </menuItem>
                             <menuItem title="Help" id="wpr-3q-Mcd">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -97,12 +77,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MacAdminMenuBar" customModuleProvider="target">
-                    <connections>
-                        <outlet property="hideDesktopMI" destination="R4o-n2-Eq4" id="cep-ia-Rjf"/>
-                        <outlet property="showDesktopMI" destination="OY7-WF-poV" id="qMi-hC-2eV"/>
-                    </connections>
-                </customObject>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MacAdminMenuBar" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
