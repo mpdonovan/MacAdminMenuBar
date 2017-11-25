@@ -29,8 +29,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: ""))
 
-        
         statusItem.menu = menu
+        menu.autoenablesItems = false
+        
+        //menu.item(withTitle: "Show Icons")?.isEnabled = false
+        showdesktop(sender: AnyObject.self)
         
     }
 
@@ -60,6 +63,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         dockProcess.launch()
         dockProcess.waitUntilExit()
         
+        menu.item(withTitle: "Show Icons")?.isEnabled = false
+        menu.item(withTitle: "Hide Icons")?.isEnabled = true
+        
     }
 
     @objc func hidedesktop(sender: Any?) {
@@ -79,7 +85,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         dockProcess.launch()
         dockProcess.waitUntilExit()
 
-        
+        menu.item(withTitle: "Show Icons")?.isEnabled = true
+        menu.item(withTitle: "Hide Icons")?.isEnabled = false
     }
     
     @objc func getBHT(sender: Any?) {
