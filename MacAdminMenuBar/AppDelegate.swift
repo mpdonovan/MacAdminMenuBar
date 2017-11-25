@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import Foundation
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -32,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = menu
         menu.autoenablesItems = false
         
-        //menu.item(withTitle: "Show Icons")?.isEnabled = false
+        // Called so the application starts in a known state
         showdesktop(sender: AnyObject.self)
         
     }
@@ -63,6 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         dockProcess.launch()
         dockProcess.waitUntilExit()
         
+        //Alternate enabled menu items
         menu.item(withTitle: "Show Icons")?.isEnabled = false
         menu.item(withTitle: "Hide Icons")?.isEnabled = true
         
@@ -85,10 +85,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         dockProcess.launch()
         dockProcess.waitUntilExit()
 
+        //Alternate enabled menu items
         menu.item(withTitle: "Show Icons")?.isEnabled = true
         menu.item(withTitle: "Hide Icons")?.isEnabled = false
     }
-    
+    // This function takes the users input and passes it to BigHonkingText
     @objc func getBHT(sender: Any?) {
         
         let bundle = Bundle.main
@@ -106,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         writeProcess.waitUntilExit()
         
     }
-    
+    // This functions gets the users input and passes it to the calling function
     @objc func getString(title: String, question: String, defaultValue: String) -> String {
         let msg = NSAlert()
         msg.addButton(withTitle: "OK")      // 1st button
