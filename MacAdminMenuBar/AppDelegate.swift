@@ -95,7 +95,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let bundle = Bundle.main
         let bhtPath = bundle.path(forResource: "BigHonkingText", ofType: "")
         
-        let myString = getString(title: "BigHonkingText", question: "Enter text to be displayed.\nClick OK\nClick text to dismiss.", defaultValue: "BigHonkingText")
+        let myString = getString(title: "BigHonkingText by John Kitzmiller", question: "Enter text to be displayed.\nClick OK\nClick text to dismiss.", defaultValue: "BigHonkingText")
         
         if (myString != "Cancel") {
             let myText = " " + myString + " "
