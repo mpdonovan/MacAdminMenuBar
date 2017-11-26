@@ -95,16 +95,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let bundle = Bundle.main
         let bhtPath = bundle.path(forResource: "BigHonkingText", ofType: "")
         
-        let myString = getString(title: "BigHonkingText", question: "Enter text to be displayed", defaultValue: "BigHonkingText")
+        let myString = getString(title: "BigHonkingText", question: "Enter text to be displayed.\nClick OK\nClick text to dismiss.", defaultValue: "BigHonkingText")
         
-        let myText = " " + myString + " "
+        if (myString != "Cancel") {
+            let myText = " " + myString + " "
+            
+            let writeProcess = Process()
+            writeProcess.launchPath = bhtPath
+            writeProcess.arguments = ["-p", "0",myText]
+            
+            writeProcess.launch()
+            writeProcess.waitUntilExit()
+        }
         
-        let writeProcess = Process()
-        writeProcess.launchPath = bhtPath
-        writeProcess.arguments = ["-p", "0",myText]
-        
-        writeProcess.launch()
-        writeProcess.waitUntilExit()
         
     }
     // This functions gets the users input and passes it to the calling function
@@ -124,7 +127,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if (response == NSApplication.ModalResponse.alertFirstButtonReturn) {
             return txt.stringValue
         } else {
-            return ""
+            return "Cancel"
         }
     }
 }
