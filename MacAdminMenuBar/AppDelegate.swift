@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = menu
         menu.autoenablesItems = false
         
-        // Called so the application starts in a known state
+        // Set application to a known state
         showdesktop(sender: AnyObject.self)
         
     }
