@@ -26,6 +26,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Text Display", action: #selector(getBHT), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Timer", action: #selector(showTimer), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: ""))
 
         statusItem.menu = menu
@@ -110,6 +112,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
     }
+    
+    // This function takes the users input and passes it to BigHonkingText
+    @objc func showTimer(sender: Any?) {
+        
+        let bundle = Bundle.main
+        let timerPath = bundle.path(forResource: "EggTimer.app/Contents/MacOS/EggTimer", ofType: "")
+        
+        
+        let writeProcess = Process()
+        writeProcess.launchPath = timerPath
+        
+        writeProcess.launch()
+        writeProcess.waitUntilExit()
+        
+    }
+    
     // This functions gets the users input and passes it to the calling function
     @objc func getString(title: String, question: String, defaultValue: String) -> String {
         let msg = NSAlert()
